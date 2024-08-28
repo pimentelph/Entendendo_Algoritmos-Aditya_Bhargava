@@ -83,22 +83,22 @@ void printArray(int arr[], int tamanhoArr) {
   printf("\n");
 }
 
-int pesquisaBinaria(int arr[], int tamanhoArr, int valorProcurado) {
+int pesquisaBinaria(int arr[], int valorProcurado){
+  
+  int inicio = 0;
+  int final = sizeof(arr) - 1;
 
-  int baixo = 0;
-  int alto = tamanhoArr - 1;
-
-  while (baixo <= alto) {
-    int somado = baixo + alto;
-    int meio = (int)floor((double)somado / 2);
+  while (inicio <= final){
+    int somado = inicio + final;
+    int meio = (int)floor(somado / 2);
     int chute = arr[meio];
 
-    if (chute == valorProcurado) {
+    if (chute == valorProcurado){
       return meio;
-    } else if (chute > valorProcurado) {
-      alto = meio - 1;
-    } else {
-      baixo = meio + 1;
+    } else if(chute > valorProcurado){
+      final = meio - 1;
+    } else{
+      inicio = meio + 1;
     }
   }
   return -1;
