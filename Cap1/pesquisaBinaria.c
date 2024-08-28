@@ -23,20 +23,20 @@ int main(void) {
 
 int pesquisaBinaria(int arr[], int valorProcurado){
   
-  int baixo = 0;
-  int alto = sizeof(arr) - 1;
+  int inicio = 0;
+  int final = sizeof(arr) - 1;
 
-  while (baixo <= alto){
-    int somado = baixo + alto;
-    int meio = (int)floor((double)somado / 2);
+  while (inicio <= final){
+    int somado = inicio + final;
+    int meio = (int)floor(somado / 2);
     int chute = arr[meio];
 
     if (chute == valorProcurado){
       return meio;
     } else if(chute > valorProcurado){
-      alto = meio - 1;
+      final = meio - 1;
     } else{
-      baixo = meio + 1;
+      inicio = meio + 1;
     }
   }
   return -1;
