@@ -103,3 +103,4 @@ int pesquisaBinaria(int arr[], int tamanhoArr, int valorProcurado) {
     }
   }
   return -1;
+}
